@@ -38,7 +38,7 @@ namespace CustomerContact.Models
         [DataType(DataType.Date)]
         [DisplayName("Date of Birth")]
         [Required]
-        public DateTime dateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {

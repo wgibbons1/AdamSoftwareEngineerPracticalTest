@@ -13,7 +13,7 @@
         string firstName = Model.Customer.FirstName.ToString();
         string lastName = Model.Customer.LastName.ToString();
 
-        int age = (Model.Customer.dateOfBirth.Year - DateTime.Today.Year);
+        int age = (Model.Customer.DateOfBirth.Year - DateTime.Today.Year);
 
         string customerTitle = string.Format(@"Customer: {0} {1}, Aged {2}", firstName, lastName, age);
     <h4>@Html.DisplayName(customerTitle)</h4>
@@ -63,10 +63,10 @@
             @Html.DisplayFor(model => model.Customer.ContactNumber)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Customer.dateOfBirth)
+            @Html.DisplayNameFor(model => model.Customer.DateOfBirth)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Customer.dateOfBirth)
+            @Html.DisplayFor(model => model.Customer.DateOfBirth)
         </dd>
         <dt>
             @Html.DisplayName("Age")

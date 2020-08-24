@@ -1,3 +1,7 @@
 ﻿.navbar {
   background-color: #f9b780; 
 }
+
+body div.body-content {
+    padding-top: 40px;
+}

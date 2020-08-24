@@ -11,32 +11,35 @@
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Customer[0].FirstName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Customer[0].LastName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Customer[0].AddressLine1)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Customer[0].AddressPostCode)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Customer[0].AddressCity)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Customer[0].AddressPostCode)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Customer[0].ContactNumber)
-                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].AddressLine1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].AddressPostCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].AddressCity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].AddressPostCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].ContactNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].Organisation)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Customer) {
+        @foreach (var item in Model.Customer) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.FirstName)
@@ -60,11 +63,14 @@
                 @Html.DisplayFor(modelItem => item.AddressCity)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Organisation)
+            </td>
+            <td>
                 <a asp-page="./Edit" asp-route-id="@item.CustomerID">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.CustomerID">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.CustomerID">Delete</a>
             </td>
         </tr>
-}
+        }
     </tbody>
 </table>

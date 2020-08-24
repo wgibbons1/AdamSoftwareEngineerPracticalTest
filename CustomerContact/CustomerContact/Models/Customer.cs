@@ -40,6 +40,10 @@ namespace CustomerContact.Models
         [Required]
         public DateTime DateOfBirth { get; set; }
 
+        [DisplayName("Council/organisation")]
+        [Required]
+        public string Organisation { get; set; }
+
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             if (EmailAddress.IndexOf('@') <= 0)

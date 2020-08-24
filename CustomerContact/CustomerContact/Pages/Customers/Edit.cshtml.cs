@@ -37,7 +37,7 @@ namespace CustomerContact.Pages.Customers
                 return Page();
             }
 
-            CustomerContext.Customer.Attach(Customer);
+            CustomerContext.Entry(Customer).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             await CustomerContext.SaveChangesAsync();
 
             return RedirectToPage("Details", new { Id = Customer.CustomerID });

@@ -44,6 +44,10 @@ namespace CustomerContact.Models
         [Required]
         public string Organisation { get; set; }
 
+        [DisplayName("Sale level")]
+        [Required]
+        public SaleLevels SaleLevel { get; set; }
+
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             if (EmailAddress.IndexOf('@') <= 0)

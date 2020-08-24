@@ -61,6 +61,16 @@
                 <span asp-validation-for="Customer.Organisation" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Customer.SaleLevel" class="control-label"></label>
+                <select asp-for="Customer.SaleLevel" class="form-control">
+                    <option value="">-</option>
+                    @foreach (SaleLevels saleLevel in Enum.GetValues(typeof(SaleLevels))) {
+                        <option value="@((int)saleLevel)">@saleLevel.GetMinText()</option>
+                    }
+                </select>
+                <span asp-validation-for="Customer.SaleLevel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </form>

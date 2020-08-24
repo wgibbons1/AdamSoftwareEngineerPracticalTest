@@ -73,6 +73,12 @@
         <dd>
             @Html.DisplayFor(model => model.Customer.Organisation)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.SaleLevel)
+        </dt>
+        <dd>
+            @Model.Customer.SaleLevel.GetMaxText()
+        </dd>
     </dl>
 </div>
 <div>

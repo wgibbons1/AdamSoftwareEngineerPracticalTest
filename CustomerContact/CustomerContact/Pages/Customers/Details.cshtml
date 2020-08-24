@@ -1,0 +1,82 @@
+@page
+@model CustomerContact.Pages.Customers.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    @{ 
+
+        string firstName = Model.Customer.FirstName.ToString();
+        string lastName = Model.Customer.LastName.ToString();
+
+        int age = (Model.Customer.dateOfBirth.Year - DateTime.Today.Year);
+
+        string customerTitle = string.Format(@"Customer: {0} {1}, Aged {3}", firstName, lastName, age);
+    <h4>@Html.DisplayName(customerTitle)</h4>
+    }
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Customer.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Customer.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.AddressLine1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Customer.AddressLine1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.AddressLine2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Customer.AddressLine2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.AddressCity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Customer.AddressCity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.AddressPostCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Customer.AddressPostCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.ContactNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Customer.ContactNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.dateOfBirth)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Customer.dateOfBirth)
+        </dd>
+        <dt>
+            @Html.DisplayName("Age")
+        </dt>
+        <dd>            
+            @Html.DisplayName(age.ToString())
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Customer.CustomerID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

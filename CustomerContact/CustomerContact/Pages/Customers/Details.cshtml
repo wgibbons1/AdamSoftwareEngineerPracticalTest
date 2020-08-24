@@ -15,7 +15,7 @@
 
         int age = (Model.Customer.DateOfBirth.Year - DateTime.Today.Year);
 
-        string customerTitle = string.Format(@"Customer: {0} {1}, Aged {2}", firstName, lastName, age);
+        string customerTitle = $"Customer: {firstName} {lastName}, Aged {age}";
     <h4>@Html.DisplayName(customerTitle)</h4>
     }
     <hr />

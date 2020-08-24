@@ -2,16 +2,22 @@
 @model CustomerContact.Pages.Customers.DetailsModel
 
 @{
-    string firstName = Model.Customer.FirstName.ToString();
-    string lastName = Model.Customer.LastName.ToString();
-
-    int yearOfTodayMinusDob = DateTime.Today.Year - Model.Customer.DateOfBirth.Year;
-    int age = Model.Customer.DateOfBirth.AddYears(yearOfTodayMinusDob) > DateTime.Today ? yearOfTodayMinusDob - 1 : yearOfTodayMinusDob;
-
-    ViewData["Title"] = $"{firstName} {lastName}, aged {age}";
+    ViewData["Title"] = "Details";
 }
 
 <div>
+    @{
+
+        string firstName = Model.Customer.FirstName.ToString();
+        string lastName = Model.Customer.LastName.ToString();
+
+        int yearOfTodayMinusDob = DateTime.Today.Year - Model.Customer.DateOfBirth.Year;
+        int age = Model.Customer.DateOfBirth.AddYears(yearOfTodayMinusDob) > DateTime.Today ? yearOfTodayMinusDob - 1 : yearOfTodayMinusDob;
+
+        string customerTitle = $"Customer: {firstName} {lastName}, Aged {age}";
+        <h4>@Html.DisplayName(customerTitle)</h4>
+    }
+    <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Customer.FirstName)
@@ -64,7 +70,7 @@
         <dt>
             @Html.DisplayName("Age")
         </dt>
-        <dd>            
+        <dd>
             @Html.DisplayName(age.ToString())
         </dd>
     </dl>

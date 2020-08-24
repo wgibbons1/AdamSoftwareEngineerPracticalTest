@@ -1,0 +1,12 @@
+﻿@page
+@model CustomerContact.Pages.Customers.DeleteModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<form method="post">
+    <input type="hidden" asp-for="CustomerId" />
+    <p>Are you sure you want to delete customer @Model.CustomerForename @Model.CustomerSurname?</p>
+    <button>Delete customer</button>
+    <a asp-page="Index">Cancel</a>
+</form>

@@ -3,6 +3,13 @@
 @{
 }
 
+@section Scripts {
+    <script src="~/js/CustomersEdit.js" asp-append-version="true"></script>
+}
+
+<input type="hidden" id="CustomersApiGetUrl" value="@Url.Action("Get", "CustomersApi")" />
+<input type="hidden" id="CustomeCommentsPostUrl" value="@Url.Action("Post", "CustomerCommentsApi")" />
+
 <div class="row">
     <div class="col-md-4">
         <form method="post">
@@ -69,7 +76,51 @@
                 <span asp-validation-for="Customer.SaleLevel" class="text-danger"></span>
             </div>
             <button class="btn btn-default">Save changes</button>
-            <a asp-page="Index">Cancel</a>
         </form>
+    </div>
+</div>
+
+<h2 style="margin-top: 40px;">Comments</h2>
+<table id="Comments" style="margin">
+    <thead>
+        <tr>
+            <th>Timestamp</th>
+            <th>Comment</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<div>
+    <button type="button" data-toggle="modal" data-target="#CreateCommentModal">Create comment</button>
+</div>
+
+<div style="margin-top: 40px;">
+    <a asp-page="Index">Back to list</a>
+</div>
+
+<div class="modal" tabindex="-1" id="CreateCommentModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title">Create comment</h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="CreateCommentForm">
+                    <div class="form-group">
+                        <label for="Comment" class="control-label">Comment</label>
+                        <textarea name="Comment" class="form-control" rows="5"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="CreateComment" form="CreateCommentForm">Create comment</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
 </div>

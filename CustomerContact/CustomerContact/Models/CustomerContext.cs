@@ -14,5 +14,6 @@ namespace CustomerContact.Models
         }
 
         public DbSet<Customer> Customer { get; set; }
+        public DbSet<CustomerComment> CustomerComments { get; set; }
     }
 }

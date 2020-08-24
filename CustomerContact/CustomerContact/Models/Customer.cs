@@ -48,6 +48,8 @@ namespace CustomerContact.Models
         [Required]
         public SaleLevels SaleLevel { get; set; }
 
+        public virtual ICollection<CustomerComment> CustomerComments { get; set; }
+
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             if (EmailAddress.IndexOf('@') <= 0)

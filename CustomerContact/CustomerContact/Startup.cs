@@ -33,7 +33,7 @@ namespace CustomerContact
                 var factory = x.GetRequiredService<IUrlHelperFactory>();
                 return factory.GetUrlHelper(actionContext);
             });
-            services.AddMvc(opts => { opts.EnableEndpointRouting = false; });
+            services.AddMvc(opts => { opts.EnableEndpointRouting = false; }).AddNewtonsoftJson();
 
         }
 

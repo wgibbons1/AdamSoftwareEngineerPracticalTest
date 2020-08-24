@@ -27,7 +27,7 @@ namespace CustomerContact.Pages.Customers
                 return NotFound();
             }
 
-            Customer = await _context.Customer.SingleOrDefaultAsync(m => m.CustomerID == id);
+            Customer = await _context.Customer.FindAsync(id);
 
             if (Customer == null)
             {
